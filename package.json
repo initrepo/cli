@@ -1,0 +1,42 @@
+{
+  "name": "initrepo",
+  "version": "1.0.0",
+  "description": "A CLI tool to extract and analyze codebase context for AI consumption",
+  "type": "module",
+  "main": "src/main.js",
+  "bin": {
+    "initrepo": "./bin/initrepo.js"
+  },
+  "scripts": {
+    "start": "node bin/initrepo.js",
+    "dev": "node bin/initrepo.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "codebase",
+    "analysis",
+    "ai",
+    "documentation",
+    "extraction"
+  ],
+  "author": "InitRepo Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "commander": "^11.1.0",
+    "globby": "^14.0.0",
+    "picocolors": "^1.0.0",
+    "fast-xml-parser": "^4.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/initrepo/cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/initrepo/cli/issues"
+  },
+  "homepage": "https://github.com/initrepo/cli#readme"
+}
