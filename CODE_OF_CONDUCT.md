@@ -70,4 +70,4 @@ Community leaders will follow these Community Impact Guidelines in determining t
 
 ## **Attribution**
 
-This Code of Conduct is adapted from the [Contributor Covenant](https://www.google.com/search?q=%5Bhttps://www.contributor-covenant.org%5D\(https://www.contributor-covenant.org\)), version 2.0, available at \[[https://www.contributor-covenant.org/version/2/0/code\_of\_conduct.html](https://www.contributor-covenant.org/version/2/0/code_of_conduct.html)]... [v2.0](https://www.google.com/search?q=%5Bhttps://www.contributor-covenant.org/version/2/0/code_of_conduct.html%5D\(https://www.contributor-covenant.org/version/2/0/code_of_conduct.html\)).
+This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org/version/2/0/code_of_conduct/).
