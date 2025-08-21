@@ -16,6 +16,7 @@ import { getRelevantFiles, readFiles } from './file-handler.js';
 import { generateTechStack } from './generators/generate-tech-stack.js';
 import { generateProjectStructure } from './generators/generate-project-structure.js';
 import { generateFullCodebase } from './generators/generate-full-codebase.js';
+import { configureScaffoldCommand } from './commands/scaffold.js';
 
 // Get current directory for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -30,7 +31,7 @@ export async function main() {
   // Configure the main command
   program
     .name('initrepo')
-    .description('Extract and analyze codebase context for AI consumption')
+    .description('Extract and analyze codebase context for AI consumption, and scaffold new projects')
     .version('1.0.0')
     .option('--init', 'Create a default .initrepoignore file in the current directory')
     .action(async (options) => {
@@ -45,6 +46,9 @@ export async function main() {
         process.exit(1);
       }
     });
+
+  // Configure scaffold command
+  configureScaffoldCommand(program);
 
   // Parse command line arguments
   program.parse();
