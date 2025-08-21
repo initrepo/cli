@@ -1,7 +1,7 @@
 {
   "name": "initrepo",
   "version": "1.0.0",
-  "description": "A CLI tool to extract and analyze codebase context for AI consumption",
+  "description": "A CLI tool to extract and analyze codebase context for AI consumption and scaffold new projects",
   "type": "module",
   "main": "src/main.js",
   "bin": {
@@ -18,7 +18,12 @@
     "analysis",
     "ai",
     "documentation",
-    "extraction"
+    "extraction",
+    "scaffolding",
+    "nextjs",
+    "react",
+    "python",
+    "automation"
   ],
   "author": "InitRepo Team",
   "license": "MIT",
