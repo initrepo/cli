@@ -50,4 +50,4 @@ If you have a bug report or a feature request, please [open an issue](https://gi
 
 ## License
 
-This project is licensed under the **MIT License**.
+This project is licensed under the [**MIT License.**](https://github.com/initrepo/cli/blob/main/LICENSE)
