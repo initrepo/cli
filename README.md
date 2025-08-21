@@ -1,8 +1,8 @@
 # InitRepo CLI
 
-[](https://www.google.com/search?q=https://www.npmjs.com/package/initrepo)
-[](https://www.google.com/search?q=https://www.npmjs.com/package/initrepo)
-[](https://www.google.com/search?q=https://github.com/initrepo/cli/actions)
+[](https://www.npmjs.com/package/initrepo)
+[](https://www.npmjs.com/package/initrepo)
+[](https://github.com/initrepo/cli/actions)
 [](https://opensource.org/licenses/MIT)
 
 This is the official open-source command-line tool for the [InitRepo](https://www.initrepo.com) ecosystem. It allows you to extract context from your local codebases for analysis and documentation by the InitRepo SaaS platform.
@@ -46,7 +46,7 @@ The `plan` command will be a shortcut to run the extraction process and send the
 
 We welcome contributions from the community\! If you'd like to contribute, please see our `CONTRIBUTING.md` file for details on how to get started, run tests, and submit pull requests.
 
-If you have a bug report or a feature request, please [open an issue](https://www.google.com/search?q=https://github.com/initrepo/cli/issues).
+If you have a bug report or a feature request, please [open an issue](https://github.com/initrepo/cli/issues/new).
 
 ## License
 
