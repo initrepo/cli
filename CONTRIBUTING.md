@@ -18,9 +18,9 @@ There are many ways to contribute to the project:
 
 ### Reporting Bugs
 
-Before submitting a bug report, please search the existing [issues](https://www.google.com/search?q=https://github.com/initrepo/cli/issues) to see if the bug has already been reported.
+Before submitting a bug report, please search the existing [issues](https://github.com/initrepo/cli/issues) to see if the bug has already been reported.
 
-If you've found a new bug, please [open a new issue](https://www.google.com/search?q=https://github.com/initrepo/cli/issues/new%3Fassignees%3D%26labels%3Dbug%26template%3Dbug_report.md%26title%3D) and provide the following information:
+If you've found a new bug, please [open a new issue](https://github.com/initrepo/cli/issues/new) and provide the following information:
 
   * **A clear and descriptive title.**
   * **Your operating system and Node.js version.**
@@ -30,7 +30,7 @@ If you've found a new bug, please [open a new issue](https://www.google.com/sear
 
 ### Suggesting Enhancements
 
-If you have an idea for a new feature or an improvement, we'd love to hear it. Please [open a new issue](https://www.google.com/search?q=https://github.com/initrepo/cli/issues/new%3Fassignees%3D%26labels%3Denhancement%26template%3Dfeature_request.md%26title%3D) to start a discussion.
+If you have an idea for a new feature or an improvement, we'd love to hear it. Please [open a new issue](https://github.com/initrepo/cli/issues/new) to start a discussion.
 
 Please provide:
 
