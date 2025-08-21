@@ -6,7 +6,7 @@ This document provides a set of guidelines to make the contribution process as e
 
 ## Code of Conduct
 
-To ensure a welcoming and inclusive environment, we have adopted a Code of Conduct that we expect all contributors to adhere to. Please take a moment to read our [CODE\_OF\_CONDUCT.md](https://www.google.com/search?q=https://github.com/initrepo/cli/blob/main/CODE_OF_CONDUCT.md) before participating.
+To ensure a welcoming and inclusive environment, we have adopted a Code of Conduct that we expect all contributors to adhere to. Please take a moment to read our [CODE\_OF\_CONDUCT.md](https://github.com/initrepo/cli/blob/main/CODE_OF_CONDUCT.md) before participating.
 
 ## How Can I Contribute?
 
