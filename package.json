@@ -10,7 +10,9 @@
   "scripts": {
     "start": "node bin/initrepo.js",
     "dev": "node bin/initrepo.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage"
   },
   "keywords": [
     "cli",
@@ -35,6 +37,11 @@
     "globby": "^14.0.0",
     "picocolors": "^1.0.0",
     "fast-xml-parser": "^4.3.2"
+  },
+  "devDependencies": {
+    "vitest": "^1.0.4",
+    "@vitest/coverage-v8": "^1.0.4",
+    "memfs": "^4.6.0"
   },
   "repository": {
     "type": "git",
