@@ -16,6 +16,12 @@ You can install the InitRepo CLI globally using npm:
 npm install -g initrepo-cli
 ```
 
+Or use it directly without installation:
+
+```bash
+npx initrepo-cli
+```
+
 ## Usage
 
 ### Extract and Analyze Codebase
