@@ -1,11 +1,11 @@
 {
-  "name": "initrepo",
+  "name": "initrepo-cli",
   "version": "1.0.0",
   "description": "A CLI tool to extract and analyze codebase context for AI consumption and scaffold new projects",
   "type": "module",
   "main": "src/main.js",
   "bin": {
-    "initrepo": "./bin/initrepo.js"
+    "initrepo-cli": "./bin/initrepo.js"
   },
   "scripts": {
     "start": "node bin/initrepo.js",
