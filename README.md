@@ -1,6 +1,6 @@
 # InitRepo CLI
 
-[![NPM Version](https://img.shields.io/npm/v/initrepo-cli)](https://www.npmjs.com/package/initrepo-cli) [![CI Status](https://github.com/initrepo/cli/actions/workflows/ci.yml/badge.svg)](https://github.com/initrepo/cli/actions) [![License](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/licenses/MIT)
+[![NPM Version](https://img.shields.io/npm/v/initrepo-cli)](https://www.npmjs.com/package/initrepo-cli) [![GitHub Stars](https://img.shields.io/github/stars/initrepo/cli?style=social)](https://github.com/initrepo/cli) [![Discord](https://img.shields.io/badge/Discord-Join%20Us-7289da?logo=discord&logoColor=white)](https://discord.gg/FuNt9ejU) [![License](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/licenses/MIT)
 
 A powerful CLI tool to extract and analyze codebase context for AI consumption, and scaffold new projects with organized structure.
 
@@ -13,7 +13,7 @@ A powerful CLI tool to extract and analyze codebase context for AI consumption, 
 You can install the InitRepo CLI globally using npm:
 
 ```bash
-npm install -g initrepo
+npm install -g initrepo-cli
 ```
 
 ## Usage
@@ -27,7 +27,7 @@ The primary function of the CLI is to extract and analyze your codebase, generat
 cd /path/to/your-project
 
 # Run the analysis (default command)
-initrepo
+initrepo-cli
 ```
 
 This will create a `.initrepo` directory containing:
@@ -40,7 +40,7 @@ This will create a `.initrepo` directory containing:
 Create a default `.initrepoignore` file to customize which files are analyzed:
 
 ```bash
-initrepo --init
+initrepo-cli --init
 ```
 
 ### Scaffold New Projects
@@ -49,11 +49,11 @@ Create new projects with organized structure:
 
 ```bash
 # Available project types: nextjs, react, react-native, python-automation, python-mcp
-initrepo scaffold <type> <project-name>
+initrepo-cli scaffold <type> <project-name>
 
 # Examples:
-initrepo scaffold nextjs my-web-app
-initrepo scaffold python-automation my-script
+initrepo-cli scaffold nextjs my-web-app
+initrepo-cli scaffold python-automation my-script
 ```
 
 ## Features
@@ -71,7 +71,7 @@ The tool respects `.gitignore` files and supports custom filtering via `.initrep
 
 ```bash
 # Create default ignore file
-initrepo --init
+initrepo-cli --init
 ```
 
 Customize the `.initrepoignore` file to exclude specific files or directories from analysis.
