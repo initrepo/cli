@@ -2,7 +2,7 @@
 
 [![NPM Version](https://img.shields.io/npm/v/initrepo-cli)](https://www.npmjs.com/package/initrepo-cli) [![GitHub Stars](https://img.shields.io/github/stars/initrepo/cli?style=social)](https://github.com/initrepo/cli) [![Discord](https://img.shields.io/badge/Discord-Join%20Us-7289da?logo=discord&logoColor=white)](https://discord.gg/FuNt9ejU) [![License](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/licenses/MIT)
 
-A powerful CLI tool to extract and analyze codebase context for AI consumption, and scaffold new projects with organized structure.
+A powerful CLI tool to extract and analyze codebase context for AI consumption, scaffold new projects, and provide intelligent codebase interaction through AI-enhanced commands.
 
 ## Prerequisites
 
@@ -49,6 +49,39 @@ Create a default `.initrepoignore` file to customize which files are analyzed:
 initrepo-cli --init
 ```
 
+### AI-Enhanced Commands
+
+The CLI provides four powerful commands designed for AI and MCP server integration:
+
+#### Dependencies Analysis
+```bash
+# Get structured dependency information
+initrepo-cli deps --format=json
+initrepo-cli deps --format=json --type=runtime
+```
+
+#### Symbol Search
+```bash
+# Find functions, classes, variables across your codebase
+initrepo-cli find-symbol ComponentName --format=json
+initrepo-cli find-symbol functionName --type=function --format=json
+```
+
+#### Code Extraction
+```bash
+# Extract specific code blocks with context
+initrepo-cli get-code functionName --format=json
+initrepo-cli get-code ComponentName --context=full --format=json
+```
+
+#### Task Management
+```bash
+# Safely manage task lists in README.md
+initrepo-cli tasks --list --format=json
+initrepo-cli tasks --add "New task" --format=json
+initrepo-cli tasks --complete "Task description" --format=json
+```
+
 ### Scaffold New Projects
 
 Create new projects with organized structure:
@@ -64,12 +97,22 @@ initrepo-cli scaffold python-automation my-script
 
 ## Features
 
+### Core Analysis
 - 🔍 **Smart Analysis** - Automatically detects and analyzes your project structure
 - 📊 **Tech Stack Detection** - Identifies dependencies, frameworks, and build tools
 - 🌳 **Project Visualization** - Generates clean file tree representations
 - 📦 **Complete Export** - Creates XML export of your entire codebase
+
+### AI-Enhanced Features
+- 🤖 **Structured Dependencies** - JSON output of all project dependencies with metadata
+- 🔎 **Symbol Search** - Find functions, classes, variables across multiple languages
+- 📄 **Code Extraction** - Extract specific code blocks with context and imports
+- ✅ **Task Management** - Safe manipulation of markdown task lists
+
+### Project Management
 - 🚀 **Project Scaffolding** - Bootstrap new projects with best practices
 - ⚡ **Fast & Lightweight** - Minimal dependencies, maximum performance
+- 🔧 **MCP Integration** - Perfect for AI assistants and development tools
 
 ## Configuration
 
@@ -81,6 +124,18 @@ initrepo-cli --init
 ```
 
 Customize the `.initrepoignore` file to exclude specific files or directories from analysis.
+
+## MCP Integration
+
+For MCP (Model Context Protocol) server developers, see our comprehensive [MCP Integration Guide](./MCP_INTEGRATION.md) which includes:
+
+- Complete command reference with JSON response formats
+- Error handling patterns
+- Best practices for integration
+- Example code for MCP servers
+- Supported programming languages and ecosystems
+
+The AI-enhanced commands are specifically designed for programmatic access by AI assistants and development tools.
 
 ## Contributing
 
