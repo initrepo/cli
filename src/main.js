@@ -17,6 +17,9 @@ import { configureDepsCommand } from './commands/deps.js';
 import { configureFindSymbolCommand } from './commands/find-symbol.js';
 import { configureGetCodeCommand } from './commands/get-code.js';
 import { configureTasksCommand } from './commands/tasks.js';
+import { configureAnalyzeImportsCommand } from './commands/analyze-imports.js';
+import { configureFindReferencesCommand } from './commands/find-references.js';
+import { configureAnalyzeComplexityCommand } from './commands/analyze-complexity.js';
 
 // Get current directory for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -61,11 +64,16 @@ export async function main() {
       }
     });
 
-  // Configure new AI-enhanced commands
+  // Configure AI-enhanced commands
   configureDepsCommand(program);
   configureFindSymbolCommand(program);
   configureGetCodeCommand(program);
   configureTasksCommand(program);
+
+  // Configure Phase 1: Advanced Code Analysis commands
+  configureAnalyzeImportsCommand(program);
+  configureFindReferencesCommand(program);
+  configureAnalyzeComplexityCommand(program);
 
   // Configure scaffold command
   configureScaffoldCommand(program);

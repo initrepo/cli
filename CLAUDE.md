@@ -27,6 +27,11 @@ node bin/initrepo.js deps --format=json
 node bin/initrepo.js find-symbol functionName --format=json
 node bin/initrepo.js get-code functionName --context=full
 node bin/initrepo.js tasks --list --format=json
+
+# Test Phase 1 advanced analysis commands
+node bin/initrepo.js analyze-imports --format=json
+node bin/initrepo.js find-references symbolName --format=json
+node bin/initrepo.js analyze-complexity --threshold=10 --format=json
 ```
 
 ## Core Architecture
@@ -107,6 +112,26 @@ Core runtime dependencies:
 - **Usage**: `initrepo tasks --add "New task" --format=json`
 - **Features**: Markdown parsing, atomic updates, rollback protection
 - **Actions**: `--list`, `--add "text"`, `--complete "text"`, `--update "old" "new"`
+
+### Phase 1: Advanced Code Analysis Commands
+
+### `analyze-imports` - Import/Export Analysis  
+- **Purpose**: Analyze import/export relationships and detect circular dependencies
+- **Usage**: `initrepo analyze-imports --unused --format=json`
+- **Features**: Unused import detection, circular dependency analysis, dependency graphs
+- **Languages**: JavaScript/TypeScript (AST), Python/Rust/Go (regex patterns)
+
+### `find-references` - Symbol Reference Search
+- **Purpose**: Find all usages of a symbol across the codebase
+- **Usage**: `initrepo find-references symbolName --exact --format=json`
+- **Features**: Cross-file usage detection, context analysis, grouping by type/file
+- **Output**: Reference locations, usage types, import/export references
+
+### `analyze-complexity` - Code Complexity Metrics
+- **Purpose**: Analyze cyclomatic complexity and maintainability metrics
+- **Usage**: `initrepo analyze-complexity --threshold=10 --format=json`
+- **Features**: Cyclomatic complexity, cognitive complexity, maintainability index
+- **Output**: Function-level metrics, complexity distribution, improvement suggestions
 
 ## Key Implementation Details
 

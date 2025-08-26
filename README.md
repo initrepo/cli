@@ -51,7 +51,7 @@ initrepo-cli --init
 
 ### AI-Enhanced Commands
 
-The CLI provides four powerful commands designed for AI and MCP server integration:
+The CLI provides seven powerful commands designed for AI and MCP server integration:
 
 #### Dependencies Analysis
 ```bash
@@ -82,6 +82,30 @@ initrepo-cli tasks --add "New task" --format=json
 initrepo-cli tasks --complete "Task description" --format=json
 ```
 
+#### Import Analysis
+```bash
+# Analyze imports and detect issues
+initrepo-cli analyze-imports --format=json
+initrepo-cli analyze-imports --unused-only --format=json
+initrepo-cli analyze-imports --circular-only --format=json
+```
+
+#### Reference Finding
+```bash
+# Find symbol references across codebase
+initrepo-cli find-references SymbolName --format=json
+initrepo-cli find-references functionName --exact --case-sensitive --format=json
+initrepo-cli find-references "import path" --include-comments --format=json
+```
+
+#### Complexity Analysis
+```bash
+# Analyze code complexity metrics
+initrepo-cli analyze-complexity --format=json
+initrepo-cli analyze-complexity --threshold=10 --format=json
+initrepo-cli analyze-complexity --with-recommendations --format=json
+```
+
 ### Scaffold New Projects
 
 Create new projects with organized structure:
@@ -108,6 +132,9 @@ initrepo-cli scaffold python-automation my-script
 - 🔎 **Symbol Search** - Find functions, classes, variables across multiple languages
 - 📄 **Code Extraction** - Extract specific code blocks with context and imports
 - ✅ **Task Management** - Safe manipulation of markdown task lists
+- 📦 **Import Analysis** - Detect unused imports and circular dependencies
+- 🔍 **Reference Finding** - Locate symbol usage across your entire codebase
+- 📊 **Complexity Analysis** - Measure cyclomatic complexity and maintainability
 
 ### Project Management
 - 🚀 **Project Scaffolding** - Bootstrap new projects with best practices

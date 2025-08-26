@@ -386,4 +386,298 @@ class InitRepoMCP {
 }
 ```
 
+## Phase 1: Advanced Code Analysis Commands
+
+### `analyze-imports` - Import/Export Analysis
+
+**Purpose**: Comprehensive analysis of import/export relationships, unused imports, and circular dependencies.
+
+**Basic Usage**:
+```bash
+initrepo-cli analyze-imports --format=json
+```
+
+**Options**:
+- `--format=json|text` - Output format (default: text)
+- `--unused` - Show only unused imports
+- `--circular` - Show only circular dependencies
+- `--stats` - Include dependency statistics
+- `--external` - Include external dependency analysis
+- `--output=<file>` - Write to file instead of stdout
+
+**JSON Response Structure**:
+```json
+{
+  "success": true,
+  "message": "Import analysis completed successfully",
+  "data": {
+    "summary": {
+      "totalFiles": 45,
+      "totalImports": 123,
+      "totalExports": 89,
+      "unusedImports": 3,
+      "circularDependencies": 1
+    },
+    "unusedImports": [
+      {
+        "file": "/path/to/file.js",
+        "importSource": "lodash",
+        "unusedIdentifier": "debounce",
+        "line": 5,
+        "suggestion": "Remove unused import: debounce"
+      }
+    ],
+    "circularDependencies": [
+      {
+        "cycle": ["file1.js", "file2.js", "file3.js", "file1.js"],
+        "length": 3,
+        "severity": "medium"
+      }
+    ]
+  }
+}
+```
+
+**MCP Use Cases**:
+- "Are there any unused imports in this project?"
+- "Check for circular dependencies in the codebase"
+- "Show me the import dependency graph"
+- "What external packages does this project depend on?"
+
+---
+
+### `find-references` - Symbol Reference Search
+
+**Purpose**: Find all references/usages of a symbol across the codebase (complementary to `find-symbol` which finds definitions).
+
+**Basic Usage**:
+```bash
+initrepo-cli find-references ComponentName --format=json
+```
+
+**Options**:
+- `--exact` - Exact name match only (no partial matching)
+- `--case-sensitive` - Case sensitive search
+- `--include-comments` - Include references in comments
+- `--include-strings` - Include references in string literals
+- `--group-by=file|type|none` - Group results by file, type, or none
+- `--limit=<number>` - Limit number of results shown
+- `--output=<file>` - Write to file instead of stdout
+
+**JSON Response Structure**:
+```json
+{
+  "success": true,
+  "message": "Found 15 references",
+  "data": {
+    "query": {
+      "symbol": "ComponentName",
+      "options": {
+        "exact": false,
+        "caseSensitive": false,
+        "includeComments": false,
+        "includeStrings": false
+      }
+    },
+    "summary": {
+      "totalReferences": 15,
+      "filesWithReferences": 8,
+      "importReferences": 3,
+      "exportReferences": 1
+    },
+    "references": [
+      {
+        "name": "ComponentName",
+        "file": "/path/to/file.js",
+        "line": 42,
+        "column": 15,
+        "context": "jsx_element",
+        "usage": "component_usage",
+        "lineContent": "<ComponentName props={data} />"
+      }
+    ],
+    "groupedByType": {
+      "function_calls": [...],
+      "jsx_usage": [...],
+      "property_access": [...],
+      "references": [...]
+    },
+    "relatedSymbols": ["props", "data", "useState"]
+  }
+}
+```
+
+**Reference Types Detected**:
+- `declarations` - Variable/function declarations
+- `function_calls` - Function invocations
+- `property_access` - Object property access
+- `jsx_usage` - React/JSX component usage
+- `assignments` - Variable assignments
+- `comments` - References in comments (optional)
+- `strings` - References in string literals (optional)
+
+**MCP Use Cases**:
+- "Where is this component being used?"
+- "Show me all places where this function is called"
+- "Find all references to this variable across the project"
+- "What components use the User model?"
+
+---
+
+### `analyze-complexity` - Code Complexity Analysis
+
+**Purpose**: Analyze code complexity using multiple metrics including cyclomatic complexity, cognitive complexity, and maintainability index.
+
+**Basic Usage**:
+```bash
+initrepo-cli analyze-complexity --threshold=10 --format=json
+```
+
+**Options**:
+- `--threshold=<number>` - Complexity threshold for flagging functions (default: 10)
+- `--top=<number>` - Show top N most complex functions (default: 10)
+- `--files` - Include per-file analysis in output
+- `--recommendations` - Include improvement recommendations
+- `--output=<file>` - Write to file instead of stdout
+
+**JSON Response Structure**:
+```json
+{
+  "success": true,
+  "message": "Complexity analysis completed successfully",
+  "data": {
+    "summary": {
+      "totalFiles": 45,
+      "totalFunctions": 234,
+      "averageComplexity": 4.2,
+      "highComplexityFunctions": 12,
+      "complexityDistribution": {
+        "low": 180,      // 1-5
+        "medium": 42,    // 6-10
+        "high": 10,      // 11-20
+        "veryHigh": 2    // 21+
+      }
+    },
+    "topComplexFunctions": [
+      {
+        "name": "processUserData",
+        "file": "/path/to/file.js",
+        "line": 45,
+        "cyclomaticComplexity": 15,
+        "cognitiveComplexity": 18,
+        "maintainabilityIndex": 65.4,
+        "linesOfCode": 45,
+        "parameters": 4,
+        "suggestions": ["Consider breaking this function into smaller functions"]
+      }
+    ],
+    "recommendations": [
+      {
+        "priority": "high",
+        "type": "complexity",
+        "message": "12 functions exceed complexity threshold of 10",
+        "action": "Refactor the most complex functions first"
+      }
+    ]
+  }
+}
+```
+
+**Complexity Metrics**:
+- **Cyclomatic Complexity**: Number of linearly independent paths through code
+- **Cognitive Complexity**: Weighted complexity based on nesting and control flow
+- **Maintainability Index**: 0-100 score indicating code maintainability
+- **Lines of Code**: Function size metric
+- **Parameter Count**: Number of function parameters
+
+**Complexity Categories**:
+- **Low (1-5)**: Simple, easy to understand
+- **Medium (6-10)**: Moderate complexity, acceptable
+- **High (11-20)**: Complex, consider refactoring
+- **Very High (21+)**: Very complex, refactoring recommended
+
+**MCP Use Cases**:
+- "Which functions are too complex and need refactoring?"
+- "What's the overall code complexity of this project?"
+- "Show me the most complex functions in the codebase"
+- "Are there any functions that exceed complexity thresholds?"
+
+## Advanced Integration Patterns
+
+### **Combining Commands for Powerful Analysis**
+
+```javascript
+class AdvancedCodeAnalysis {
+  async getComplexityHotspots() {
+    // Find high complexity functions
+    const complexity = await this.runCommand('analyze-complexity --threshold=10 --format=json');
+    
+    // For each complex function, find its references
+    const hotspots = [];
+    for (const func of complexity.data.topComplexFunctions) {
+      const refs = await this.runCommand(`find-references "${func.name}" --format=json`);
+      hotspots.push({
+        function: func,
+        usageCount: refs.data.summary.totalReferences,
+        impact: func.cyclomaticComplexity * refs.data.summary.totalReferences
+      });
+    }
+    
+    return hotspots.sort((a, b) => b.impact - a.impact);
+  }
+
+  async getUnusedCodeCandidates() {
+    // Find unused imports
+    const imports = await this.runCommand('analyze-imports --unused --format=json');
+    
+    // Find symbols with very few references
+    const lowUsageFunctions = [];
+    const symbols = await this.runCommand('find-symbol "" --type=function --format=json');
+    
+    for (const symbol of symbols.data.symbols) {
+      const refs = await this.runCommand(`find-references "${symbol.name}" --format=json`);
+      if (refs.data.summary.totalReferences < 3) {
+        lowUsageFunctions.push({ symbol, references: refs.data.summary.totalReferences });
+      }
+    }
+    
+    return {
+      unusedImports: imports.data.unusedImports,
+      lowUsageFunctions: lowUsageFunctions.sort((a, b) => a.references - b.references)
+    };
+  }
+}
+```
+
+### **Code Health Dashboard**
+
+Your MCP server can create comprehensive code health reports by combining multiple analysis commands:
+
+```javascript
+async generateCodeHealthReport() {
+  const [deps, complexity, imports] = await Promise.all([
+    this.runCommand('deps --format=json'),
+    this.runCommand('analyze-complexity --format=json --recommendations'),
+    this.runCommand('analyze-imports --stats --format=json')
+  ]);
+
+  return {
+    healthScore: this.calculateHealthScore(complexity, imports),
+    dependencies: deps.data.summary,
+    complexity: complexity.data.summary,
+    imports: imports.data.summary,
+    recommendations: [
+      ...complexity.data.recommendations,
+      ...this.generateImportRecommendations(imports.data)
+    ],
+    codeQualityMetrics: {
+      averageComplexity: complexity.data.summary.averageComplexity,
+      unusedImports: imports.data.unusedImports.length,
+      circularDependencies: imports.data.circularDependencies.length,
+      externalDependencies: deps.data.byEcosystem.nodejs?.dependencies.length || 0
+    }
+  };
+}
+```
+
 This integration approach provides your MCP server with powerful, reliable access to codebase information and project management capabilities without the complexity of implementing these features from scratch.
