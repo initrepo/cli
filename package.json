@@ -33,22 +33,25 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "commander": "^11.1.0",
-    "globby": "^14.0.0",
-    "picocolors": "^1.0.0",
-    "fast-xml-parser": "^4.3.2",
+    "@babel/generator": "^7.23.0",
     "@babel/parser": "^7.23.0",
     "@babel/traverse": "^7.23.0",
-    "@babel/generator": "^7.23.0",
+    "ast-types": "^0.16.1",
+    "commander": "^11.1.0",
+    "complexity-report": "^2.0.0-alpha",
+    "fast-xml-parser": "^4.3.2",
+    "globby": "^14.0.0",
+    "jscodeshift": "^17.3.0",
+    "picocolors": "^1.0.0",
+    "recast": "^0.23.11",
     "remark": "^15.0.1",
     "remark-parse": "^11.0.0",
-    "unist-util-visit": "^5.0.0",
-    "complexity-report": "^2.0.0-alpha"
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "vitest": "^1.0.4",
     "@vitest/coverage-v8": "^1.0.4",
-    "memfs": "^4.6.0"
+    "memfs": "^4.6.0",
+    "vitest": "^1.0.4"
   },
   "repository": {
     "type": "git",

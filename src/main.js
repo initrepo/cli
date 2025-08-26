@@ -20,6 +20,9 @@ import { configureTasksCommand } from './commands/tasks.js';
 import { configureAnalyzeImportsCommand } from './commands/analyze-imports.js';
 import { configureFindReferencesCommand } from './commands/find-references.js';
 import { configureAnalyzeComplexityCommand } from './commands/analyze-complexity.js';
+import { configureSafeRenameCommand } from './commands/safe-rename.js';
+import { configureManageImportsCommand } from './commands/manage-imports.js';
+import { configureApplyTemplateCommand } from './commands/apply-template.js';
 
 // Get current directory for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -74,6 +77,11 @@ export async function main() {
   configureAnalyzeImportsCommand(program);
   configureFindReferencesCommand(program);
   configureAnalyzeComplexityCommand(program);
+
+  // Configure Phase 2: Safe Code Modifications commands
+  configureSafeRenameCommand(program);
+  configureManageImportsCommand(program);
+  configureApplyTemplateCommand(program);
 
   // Configure scaffold command
   configureScaffoldCommand(program);
