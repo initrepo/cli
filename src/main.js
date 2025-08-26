@@ -23,6 +23,9 @@ import { configureAnalyzeComplexityCommand } from './commands/analyze-complexity
 import { configureSafeRenameCommand } from './commands/safe-rename.js';
 import { configureManageImportsCommand } from './commands/manage-imports.js';
 import { configureApplyTemplateCommand } from './commands/apply-template.js';
+import { configureGenerateStructureCommand } from './commands/generate-structure.js';
+import { configureValidateStructureCommand } from './commands/validate-structure.js';
+import { configureSuggestRefactorCommand } from './commands/suggest-refactor.js';
 
 // Get current directory for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -82,6 +85,11 @@ export async function main() {
   configureSafeRenameCommand(program);
   configureManageImportsCommand(program);
   configureApplyTemplateCommand(program);
+
+  // Configure Phase 3: Project Structure Management commands
+  configureGenerateStructureCommand(program);
+  configureValidateStructureCommand(program);
+  configureSuggestRefactorCommand(program);
 
   // Configure scaffold command
   configureScaffoldCommand(program);
