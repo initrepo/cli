@@ -51,7 +51,7 @@ initrepo-cli --init
 
 ### AI-Enhanced Commands
 
-The CLI provides seven powerful commands designed for AI and MCP server integration:
+The CLI provides ten powerful commands designed for AI and MCP server integration:
 
 #### Dependencies Analysis
 ```bash
@@ -106,6 +106,54 @@ initrepo-cli analyze-complexity --threshold=10 --format=json
 initrepo-cli analyze-complexity --with-recommendations --format=json
 ```
 
+#### Safe Symbol Renaming
+```bash
+# Safely rename symbols across multiple files
+initrepo-cli safe-rename oldName newName --dry-run --format=json
+initrepo-cli safe-rename functionName newFunctionName --type=function
+initrepo-cli safe-rename ClassName NewClassName --exact --format=json
+```
+
+#### Import Management
+```bash
+# Manage import statements in JavaScript/TypeScript files
+initrepo-cli manage-imports --remove-unused --organize --format=json
+initrepo-cli manage-imports --add "lodash:get,set" --format=json
+initrepo-cli manage-imports --update "old-package->new-package" --format=json
+```
+
+#### Template Application
+```bash
+# Apply code templates and snippets
+initrepo-cli apply-template --list-templates
+initrepo-cli apply-template react-component --variables "componentName=MyComponent"
+initrepo-cli apply-template function --variables '{"functionName":"myFunc"}' --position=end
+```
+
+#### Structure Documentation
+```bash
+# Generate comprehensive project structure documentation
+initrepo-cli generate-structure --format=json
+initrepo-cli generate-structure --format=tree --no-symbols
+initrepo-cli generate-structure --max-depth=5 --include-files
+```
+
+#### Structure Validation
+```bash
+# Validate project structure against best practices
+initrepo-cli validate-structure --format=json
+initrepo-cli validate-structure --strict --max-file-size=800
+initrepo-cli validate-structure --no-readme --no-license --format=json
+```
+
+#### Refactoring Suggestions
+```bash
+# Analyze and suggest refactoring opportunities
+initrepo-cli suggest-refactor --format=json
+initrepo-cli suggest-refactor --min-severity=medium --top=5
+initrepo-cli suggest-refactor --category=complexity --complexity-threshold=15
+```
+
 ### Scaffold New Projects
 
 Create new projects with organized structure:
@@ -128,6 +176,8 @@ initrepo-cli scaffold python-automation my-script
 - 📦 **Complete Export** - Creates XML export of your entire codebase
 
 ### AI-Enhanced Features
+
+#### Phase 1: Advanced Code Analysis
 - 🤖 **Structured Dependencies** - JSON output of all project dependencies with metadata
 - 🔎 **Symbol Search** - Find functions, classes, variables across multiple languages
 - 📄 **Code Extraction** - Extract specific code blocks with context and imports
@@ -135,6 +185,20 @@ initrepo-cli scaffold python-automation my-script
 - 📦 **Import Analysis** - Detect unused imports and circular dependencies
 - 🔍 **Reference Finding** - Locate symbol usage across your entire codebase
 - 📊 **Complexity Analysis** - Measure cyclomatic complexity and maintainability
+
+#### Phase 2: Safe Code Modifications
+- 🔧 **Safe Symbol Renaming** - AST-based renaming across multiple files with precision
+- 📥 **Import Management** - Add, remove, organize, and update import statements
+- 📝 **Template Application** - Insert code templates with variable substitution
+- 🛡️ **Dry-Run Modes** - Preview all modifications before applying changes
+- ⚡ **Multi-language Support** - JavaScript, TypeScript with intelligent fallbacks
+
+#### Phase 3: Project Structure Management
+- 🏗️ **Structure Documentation** - Comprehensive project architecture analysis
+- ✅ **Structure Validation** - Best practices compliance with scoring system
+- 🔍 **Refactoring Suggestions** - Intelligent code quality recommendations
+- 🎯 **Framework Detection** - Automatic identification of React, Vue, Angular, etc.
+- 📋 **Architecture Patterns** - Recognition of MVC, layered, modular structures
 
 ### Project Management
 - 🚀 **Project Scaffolding** - Bootstrap new projects with best practices
