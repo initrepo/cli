@@ -117,3 +117,11 @@ async function handleInitCommand() {
     throw new Error(`Failed to create .initrepoignore: ${error.message}`);
   }
 }
+
+// Run the main function if this file is executed directly
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch(error => {
+    console.error('Fatal error:', error.message);
+    process.exit(1);
+  });
+}
