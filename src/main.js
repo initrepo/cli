@@ -41,7 +41,7 @@ export async function main() {
   program
     .name('initrepo')
     .description('AI-enhanced codebase analysis and project management CLI tool')
-    .version('1.0.2')
+    .version('2.0.0')
     .option('--init', 'Create a default .initrepoignore file in the current directory')
     .action(async (options) => {
       try {
