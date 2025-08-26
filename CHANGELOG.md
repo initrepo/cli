@@ -5,6 +5,24 @@ All notable changes to the InitRepo CLI project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.1] - 2024-12-28
+
+### 🐛 **CRITICAL BUG FIX**
+
+#### Fixed
+- **CLI Execution**: Fixed critical bug where the main CLI was completely non-functional
+  - Added missing `main()` function call in `src/main.js`
+  - All CLI commands were silently failing due to main function never being executed
+  - Commands like `initrepo-cli --version`, `initrepo-cli tasks --help`, and all other commands now work correctly
+  - Resolves blocking issue for MCP server integration where `tasks` command appeared to have missing options
+
+#### Impact
+This was a **blocking bug** that made the entire CLI unusable despite having correct command implementations. The `tasks` command (and all others) were properly implemented but never executed.
+
+**For MCP Server Users**: Both documented command formats now work correctly:
+- `initrepo-cli tasks --list --format=json` ✅
+- `initrepo-cli tasks --format=json` ✅
+
 ## [2.0.0] - 2024-12-28
 
 ### 🚀 Major Release - Complete AI-Enhanced Codebase Management Platform
