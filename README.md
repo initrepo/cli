@@ -4,11 +4,21 @@
 
 A powerful CLI tool to extract and analyze codebase context for AI consumption, scaffold new projects, and provide intelligent codebase interaction through AI-enhanced commands.
 
+## Documentation
+
+📚 **Complete Documentation**: [https://docs.initrepo.com](https://docs.initrepo.com)
+
+🔧 **CLI Installation Guide**: [https://docs.initrepo.com/cli/installation](https://docs.initrepo.com/cli/installation)
+
+For detailed guides, tutorials, and API references, visit our comprehensive documentation platform.
+
 ## Prerequisites
 
 - Node.js (v18.0.0 or higher)
 
 ## Installation
+
+📖 **Detailed Installation Guide**: [https://docs.initrepo.com/cli/installation](https://docs.initrepo.com/cli/installation)
 
 You can install the InitRepo CLI globally using npm:
 
@@ -218,7 +228,9 @@ Customize the `.initrepoignore` file to exclude specific files or directories fr
 
 ## MCP Integration
 
-For MCP (Model Context Protocol) server developers, see our comprehensive [MCP Integration Guide](./MCP_INTEGRATION.md) which includes:
+📖 **Online MCP Integration Guide**: [https://docs.initrepo.com/mcp-integration](https://docs.initrepo.com/mcp-integration)
+
+For MCP (Model Context Protocol) server developers, see our comprehensive [MCP Integration Guide](./MCP_INTEGRATION.md) and online documentation which includes:
 
 - Complete command reference with JSON response formats
 - Error handling patterns
